@@ -1,0 +1,50 @@
+name: Noticias Forex Factory
+
+on:
+  schedule:
+    - cron: "17 */3 * * *"   # every 3 hours
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: noticias
+  cancel-in-progress: false
+
+jobs:
+  descargar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Descargar la semana de Forex Factory
+        id: ff
+        run: |
+          ok=0
+          for i in 1 2 3; do
+            code=$(curl -s -o nuevo.json -w "%{http_code}" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" \
+              "https://nfs.faireconomy.media/ff_calendar_thisweek.json" || true)
+            echo "Intento $i: HTTP $code"
+            if [ "$code" = "200" ] && head -c 1 nuevo.json | grep -q '\['; then ok=1; break; fi
+            sleep 60
+          done
+          echo "ok=$ok" >> "$GITHUB_OUTPUT"
+
+      - name: Guardar si ha cambiado
+        if: steps.ff.outputs.ok == '1'
+        run: |
+          python3 -c "import json; d=json.load(open('nuevo.json')); assert isinstance(d,list) and d; print(len(d),'noticias')"
+          if [ -f ff-semana.json ] && cmp -s nuevo.json ff-semana.json; then
+            echo "Sin cambios"; rm nuevo.json; exit 0
+          fi
+          mv nuevo.json ff-semana.json
+          git config user.name "noticias-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ff-semana.json
+          git commit -m "Actualiza noticias de la semana"
+          git push
+
+      - name: Aviso si Forex Factory no responde
+        if: steps.ff.outputs.ok != '1'
+        run: echo "::warning::Forex Factory no ha dejado descargar esta vez. Se reintentará en la próxima ejecución."
