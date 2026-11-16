@@ -20,7 +20,11 @@ def next_date(sym):
     d = get(f"https://api.nasdaq.com/api/analyst/{sym}/earnings-date")
     txt = json.dumps(d.get("data") or {})
     m = re.search(r"([A-Z][a-z]{2} \d{1,2}, \d{4})", txt)
-    return dt.datetime.strptime(m.group(1), "%b %d, %Y").date() if m else None
+    if m: return dt.datetime.strptime(m.group(1), "%b %d, %Y").date()
+    m = re.search(r"(\d{1,2})/(\d{1,2})/(\d{4})", txt)
+    if m: return dt.date(int(m.group(3)), int(m.group(1)), int(m.group(2)))
+    print("  texto Nasdaq:", txt[:400])
+    return None
 
 def time_of_day(sym, day):
     d = get(f"https://api.nasdaq.com/api/calendar/earnings?date={day.isoformat()}")
