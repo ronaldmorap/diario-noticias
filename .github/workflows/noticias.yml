@@ -1,6 +1,8 @@
 name: Noticias Forex Factory
 
 on:
+  push:
+    paths: ["scripts/**", ".github/workflows/**"]
   schedule:
     - cron: "17 */3 * * *"   # every 3 hours
   workflow_dispatch: {}
@@ -44,6 +46,19 @@ jobs:
           git add ff-semana.json
           git commit -m "Actualiza noticias de la semana"
           git push
+
+      - name: Resultados de las 7 magníficas
+        run: |
+          python3 scripts/resultados.py
+          if [ -f resultados.json ] && ! git diff --quiet -- resultados.json 2>/dev/null || [ -n "$(git ls-files --others --exclude-standard resultados.json)" ]; then
+            git config user.name "noticias-bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git pull -q --rebase origin main || true
+            git add resultados.json
+            git commit -m "Actualiza fechas de resultados" && git push || true
+          else
+            echo "Resultados sin cambios"
+          fi
 
       - name: Aviso si Forex Factory no responde
         if: steps.ff.outputs.ok != '1'
