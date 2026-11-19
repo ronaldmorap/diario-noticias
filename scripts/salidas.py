@@ -44,7 +44,6 @@ def main():
         for status, rows in groups:
             print(ym, status, len(rows))
             for r in rows:
-                if status == "priced" and ym == today.strftime("%Y-%m"): print("   fila:", json.dumps(r, ensure_ascii=False)[:400])
                 amount = money(r.get("dollarValueOfSharesOffered"))
                 if amount < MIN_AMOUNT: continue
                 day = parse_date(r.get("pricedDate") or r.get("expectedPriceDate"))

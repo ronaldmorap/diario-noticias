@@ -1,1 +1,11 @@
-[]
+[
+ {
+  "date": "2026-11-19",
+  "name": "Anthropic, PBC",
+  "ticker": "ANT",
+  "exchange": "NASDAQ Global Select",
+  "price": "83.00",
+  "amount": 81340000000.0,
+  "status": "priced"
+ }
+]
