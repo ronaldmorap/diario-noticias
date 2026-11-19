@@ -1,0 +1,34 @@
+name: Histórico de noticias (backtesting)
+
+on:
+  push:
+    paths: ["scripts/historico.py", ".github/workflows/historico.yml"]
+  schedule:
+    - cron: "41 5 * * *"   # once a day: adds the days that have just passed
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: noticias
+  cancel-in-progress: false
+
+jobs:
+  historico:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+      - name: Completar el histórico
+        continue-on-error: true
+        run: python3 scripts/historico.py
+      - name: Guardar
+        run: |
+          git config user.name "noticias-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- historico.json
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git commit -q -m "Actualiza histórico de noticias"
+          git pull -q --rebase origin main || true
+          git push
