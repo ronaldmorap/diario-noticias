@@ -44,6 +44,7 @@ def main():
         for status, rows in groups:
             print(ym, status, len(rows))
             for r in rows:
+                if status == "priced" and ym == today.strftime("%Y-%m"): print("   fila:", json.dumps(r, ensure_ascii=False)[:400])
                 amount = money(r.get("dollarValueOfSharesOffered"))
                 if amount < MIN_AMOUNT: continue
                 day = parse_date(r.get("pricedDate") or r.get("expectedPriceDate"))
@@ -62,7 +63,9 @@ def main():
     cutoff = (today - dt.timedelta(days=120)).isoformat()
     for e in prev:
         k = (e.get("ticker") or e.get("name"), e.get("date"))
-        if k not in out and e.get("date", "") >= cutoff and e.get("date", "") < today.isoformat(): out[k] = e
+        # Una salida que ya estaba guardada no se borra nunca por desaparecer de la lista de Nasdaq
+        # (al cotizar pasa de "upcoming" a "priced" y a veces cambia de formato); solo caduca a los 120 días.
+        if k not in out and e.get("date", "") >= cutoff: out[k] = e
     data = sorted(out.values(), key=lambda e: e["date"])
     json.dump(data, open("salidas.json", "w"), ensure_ascii=False, indent=1)
     print(len(data), "salidas grandes guardadas")
