@@ -33,6 +33,10 @@ jobs:
               python3 -c "import json; d=json.load(open('nuevo.json')); assert isinstance(d,list) and d; print(len(d),'noticias')"
               cmp -s nuevo.json ff-semana.json || mv nuevo.json ff-semana.json
               rm -f nuevo.json
+              # permanent weekly archive (one file per week, kept forever) for future backtesting
+              mkdir -p archivo
+              SEMANA=$(python3 -c "import json,datetime as d; e=json.load(open('ff-semana.json')); x=min(d.date.fromisoformat(i['date'][:10]) for i in e); print((x-d.timedelta(days=(x.weekday()+1)%7)).isoformat())")
+              cp ff-semana.json "archivo/ff-$SEMANA.json"
               python3 scripts/estado.py ff
               exit 0
             fi
