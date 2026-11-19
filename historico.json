@@ -1,0 +1,1839 @@
+[
+{
+"date": "2025-11-03",
+"kind": "none"
+},
+{
+"date": "2025-11-04",
+"time": "",
+"title": "Resultados de AMD",
+"kind": "resultados",
+"sym": "AMD"
+},
+{
+"date": "2025-11-04",
+"time": "10:00",
+"title": "ISM manufacturero",
+"kind": "macro",
+"src": "ISM Manufacturing PMI"
+},
+{
+"date": "2025-11-05",
+"kind": "none"
+},
+{
+"date": "2025-11-06",
+"time": "10:00",
+"title": "ISM servicios",
+"kind": "macro",
+"src": "ISM Non-Manufacturing PMI"
+},
+{
+"date": "2025-11-07",
+"kind": "none"
+},
+{
+"date": "2025-11-10",
+"kind": "none"
+},
+{
+"date": "2025-11-11",
+"kind": "none"
+},
+{
+"date": "2025-11-12",
+"kind": "none"
+},
+{
+"date": "2025-11-13",
+"kind": "none"
+},
+{
+"date": "2025-11-14",
+"kind": "none"
+},
+{
+"date": "2025-11-17",
+"kind": "none"
+},
+{
+"date": "2025-11-18",
+"kind": "none"
+},
+{
+"date": "2025-11-19",
+"time": "",
+"title": "Resultados de Nvidia",
+"kind": "resultados",
+"sym": "NVDA"
+},
+{
+"date": "2025-11-20",
+"time": "14:00",
+"title": "Fed: actas del FOMC",
+"kind": "fed",
+"src": "FOMC Meeting Minutes"
+},
+{
+"date": "2025-11-21",
+"time": "08:30",
+"title": "Nóminas no agrícolas (NFP) – empleo",
+"kind": "macro",
+"src": "Nonfarm Payrolls"
+},
+{
+"date": "2025-11-24",
+"kind": "none"
+},
+{
+"date": "2025-11-25",
+"kind": "none"
+},
+{
+"date": "2025-11-26",
+"time": "08:30",
+"title": "Ventas minoristas",
+"kind": "macro",
+"src": "Core Retail Sales"
+},
+{
+"date": "2025-11-26",
+"time": "08:30",
+"title": "IPP (PPI) – precios de producción",
+"kind": "macro",
+"src": "PPI"
+},
+{
+"date": "2025-11-27",
+"kind": "none"
+},
+{
+"date": "2025-11-28",
+"kind": "none"
+},
+{
+"date": "2025-12-01",
+"kind": "none"
+},
+{
+"date": "2025-12-02",
+"time": "10:00",
+"title": "ISM manufacturero",
+"kind": "macro",
+"src": "ISM Manufacturing PMI"
+},
+{
+"date": "2025-12-02",
+"time": "20:00",
+"title": "Fed: habla el presidente",
+"kind": "fed",
+"src": "Fed Chair Powell Speaks"
+},
+{
+"date": "2025-12-03",
+"kind": "none"
+},
+{
+"date": "2025-12-04",
+"time": "10:00",
+"title": "ISM servicios",
+"kind": "macro",
+"src": "ISM Non-Manufacturing PMI"
+},
+{
+"date": "2025-12-05",
+"kind": "none"
+},
+{
+"date": "2025-12-08",
+"kind": "none"
+},
+{
+"date": "2025-12-09",
+"kind": "none"
+},
+{
+"date": "2025-12-10",
+"time": "10:00",
+"title": "Ofertas de empleo (JOLTS)",
+"kind": "macro",
+"src": "JOLTS Job Openings"
+},
+{
+"date": "2025-12-11",
+"time": "",
+"title": "Resultados de Broadcom",
+"kind": "resultados",
+"sym": "AVGO"
+},
+{
+"date": "2025-12-11",
+"time": "14:00",
+"title": "Fed: decisión de tipos (FOMC)",
+"kind": "fed",
+"src": "FOMC Statement"
+},
+{
+"date": "2025-12-11",
+"time": "14:30",
+"title": "Fed: habla el presidente",
+"kind": "fed",
+"src": "FOMC Press Conference"
+},
+{
+"date": "2025-12-12",
+"kind": "none"
+},
+{
+"date": "2025-12-15",
+"kind": "none"
+},
+{
+"date": "2025-12-16",
+"kind": "none"
+},
+{
+"date": "2025-12-17",
+"time": "08:29",
+"title": "Nóminas no agrícolas (NFP) – empleo",
+"kind": "macro",
+"src": "Nonfarm Payrolls"
+},
+{
+"date": "2025-12-17",
+"time": "08:30",
+"title": "Ventas minoristas",
+"kind": "macro",
+"src": "Core Retail Sales"
+},
+{
+"date": "2025-12-18",
+"kind": "none"
+},
+{
+"date": "2025-12-19",
+"time": "08:30",
+"title": "IPC (CPI) – inflación",
+"kind": "macro",
+"src": "CPI"
+},
+{
+"date": "2025-12-22",
+"kind": "none"
+},
+{
+"date": "2025-12-23",
+"kind": "none"
+},
+{
+"date": "2025-12-24",
+"time": "08:30",
+"title": "PCE – inflación preferida por la Fed",
+"kind": "macro",
+"src": "Core PCE Prices"
+},
+{
+"date": "2025-12-24",
+"time": "08:30",
+"title": "PIB (GDP)",
+"kind": "macro",
+"src": "GDP"
+},
+{
+"date": "2025-12-25",
+"kind": "none"
+},
+{
+"date": "2025-12-26",
+"kind": "none"
+},
+{
+"date": "2025-12-29",
+"kind": "none"
+},
+{
+"date": "2025-12-30",
+"kind": "none"
+},
+{
+"date": "2025-12-31",
+"time": "14:00",
+"title": "Fed: actas del FOMC",
+"kind": "fed",
+"src": "FOMC Meeting Minutes"
+},
+{
+"date": "2026-01-01",
+"kind": "none"
+},
+{
+"date": "2026-01-02",
+"kind": "none"
+},
+{
+"date": "2026-01-05",
+"kind": "none"
+},
+{
+"date": "2026-01-06",
+"time": "10:00",
+"title": "ISM manufacturero",
+"kind": "macro",
+"src": "ISM Manufacturing PMI"
+},
+{
+"date": "2026-01-07",
+"kind": "none"
+},
+{
+"date": "2026-01-08",
+"time": "10:00",
+"title": "ISM servicios",
+"kind": "macro",
+"src": "ISM Non-Manufacturing PMI"
+},
+{
+"date": "2026-01-08",
+"time": "10:00",
+"title": "Ofertas de empleo (JOLTS)",
+"kind": "macro",
+"src": "JOLTS Job Openings"
+},
+{
+"date": "2026-01-09",
+"kind": "none"
+},
+{
+"date": "2026-01-12",
+"kind": "none"
+},
+{
+"date": "2026-01-13",
+"kind": "none"
+},
+{
+"date": "2026-01-14",
+"time": "08:30",
+"title": "IPC (CPI) – inflación",
+"kind": "macro",
+"src": "CPI"
+},
+{
+"date": "2026-01-15",
+"time": "",
+"title": "Resultados de TSMC",
+"kind": "resultados",
+"sym": "TSM"
+},
+{
+"date": "2026-01-15",
+"time": "08:29",
+"title": "IPP (PPI) – precios de producción",
+"kind": "macro",
+"src": "PPI"
+},
+{
+"date": "2026-01-15",
+"time": "08:30",
+"title": "Ventas minoristas",
+"kind": "macro",
+"src": "Core Retail Sales"
+},
+{
+"date": "2026-01-16",
+"kind": "none"
+},
+{
+"date": "2026-01-19",
+"kind": "none"
+},
+{
+"date": "2026-01-20",
+"time": "",
+"title": "Resultados de Netflix",
+"kind": "resultados",
+"sym": "NFLX"
+},
+{
+"date": "2026-01-21",
+"kind": "none"
+},
+{
+"date": "2026-01-22",
+"kind": "none"
+},
+{
+"date": "2026-01-23",
+"time": "08:30",
+"title": "PCE – inflación preferida por la Fed",
+"kind": "macro",
+"src": "Core PCE Prices"
+},
+{
+"date": "2026-01-23",
+"time": "08:30",
+"title": "PIB (GDP)",
+"kind": "macro",
+"src": "GDP"
+},
+{
+"date": "2026-01-26",
+"kind": "none"
+},
+{
+"date": "2026-01-27",
+"kind": "none"
+},
+{
+"date": "2026-01-28",
+"time": "",
+"title": "Resultados de Microsoft",
+"kind": "resultados",
+"sym": "MSFT"
+},
+{
+"date": "2026-01-28",
+"time": "",
+"title": "Resultados de Meta",
+"kind": "resultados",
+"sym": "META"
+},
+{
+"date": "2026-01-28",
+"time": "",
+"title": "Resultados de Tesla",
+"kind": "resultados",
+"sym": "TSLA"
+},
+{
+"date": "2026-01-29",
+"time": "",
+"title": "Resultados de Apple",
+"kind": "resultados",
+"sym": "AAPL"
+},
+{
+"date": "2026-01-29",
+"time": "14:00",
+"title": "Fed: decisión de tipos (FOMC)",
+"kind": "fed",
+"src": "FOMC Statement"
+},
+{
+"date": "2026-01-29",
+"time": "14:30",
+"title": "Fed: habla el presidente",
+"kind": "fed",
+"src": "FOMC Press Conference"
+},
+{
+"date": "2026-01-30",
+"kind": "none"
+},
+{
+"date": "2026-02-02",
+"kind": "none"
+},
+{
+"date": "2026-02-03",
+"time": "",
+"title": "Resultados de AMD",
+"kind": "resultados",
+"sym": "AMD"
+},
+{
+"date": "2026-02-03",
+"time": "10:00",
+"title": "ISM manufacturero",
+"kind": "macro",
+"src": "ISM Manufacturing PMI"
+},
+{
+"date": "2026-02-04",
+"time": "",
+"title": "Resultados de Alphabet (Google)",
+"kind": "resultados",
+"sym": "GOOGL"
+},
+{
+"date": "2026-02-05",
+"time": "",
+"title": "Resultados de Amazon",
+"kind": "resultados",
+"sym": "AMZN"
+},
+{
+"date": "2026-02-05",
+"time": "10:00",
+"title": "ISM servicios",
+"kind": "macro",
+"src": "ISM Non-Manufacturing PMI"
+},
+{
+"date": "2026-02-06",
+"time": "10:00",
+"title": "Ofertas de empleo (JOLTS)",
+"kind": "macro",
+"src": "JOLTS Job Openings"
+},
+{
+"date": "2026-02-09",
+"kind": "none"
+},
+{
+"date": "2026-02-10",
+"kind": "none"
+},
+{
+"date": "2026-02-11",
+"time": "08:30",
+"title": "Ventas minoristas",
+"kind": "macro",
+"src": "Core Retail Sales"
+},
+{
+"date": "2026-02-12",
+"time": "08:30",
+"title": "Nóminas no agrícolas (NFP) – empleo",
+"kind": "macro",
+"src": "Nonfarm Payrolls"
+},
+{
+"date": "2026-02-13",
+"kind": "none"
+},
+{
+"date": "2026-02-16",
+"kind": "none"
+},
+{
+"date": "2026-02-17",
+"kind": "none"
+},
+{
+"date": "2026-02-18",
+"kind": "none"
+},
+{
+"date": "2026-02-19",
+"time": "14:00",
+"title": "Fed: actas del FOMC",
+"kind": "fed",
+"src": "FOMC Meeting Minutes"
+},
+{
+"date": "2026-02-20",
+"kind": "none"
+},
+{
+"date": "2026-02-23",
+"kind": "none"
+},
+{
+"date": "2026-02-24",
+"kind": "none"
+},
+{
+"date": "2026-02-25",
+"time": "",
+"title": "Resultados de Nvidia",
+"kind": "resultados",
+"sym": "NVDA"
+},
+{
+"date": "2026-02-26",
+"kind": "none"
+},
+{
+"date": "2026-02-27",
+"kind": "none"
+},
+{
+"date": "2026-03-02",
+"kind": "none"
+},
+{
+"date": "2026-03-03",
+"time": "10:00",
+"title": "ISM manufacturero",
+"kind": "macro",
+"src": "ISM Manufacturing PMI"
+},
+{
+"date": "2026-03-04",
+"time": "",
+"title": "Resultados de Broadcom",
+"kind": "resultados",
+"sym": "AVGO"
+},
+{
+"date": "2026-03-05",
+"time": "10:00",
+"title": "ISM servicios",
+"kind": "macro",
+"src": "ISM Non-Manufacturing PMI"
+},
+{
+"date": "2026-03-06",
+"kind": "none"
+},
+{
+"date": "2026-03-09",
+"kind": "none"
+},
+{
+"date": "2026-03-10",
+"kind": "none"
+},
+{
+"date": "2026-03-11",
+"kind": "none"
+},
+{
+"date": "2026-03-12",
+"time": "07:30",
+"title": "IPC (CPI) – inflación",
+"kind": "macro",
+"src": "CPI"
+},
+{
+"date": "2026-03-13",
+"kind": "none"
+},
+{
+"date": "2026-03-16",
+"kind": "none"
+},
+{
+"date": "2026-03-17",
+"kind": "none"
+},
+{
+"date": "2026-03-18",
+"kind": "none"
+},
+{
+"date": "2026-03-19",
+"time": "07:30",
+"title": "IPP (PPI) – precios de producción",
+"kind": "macro",
+"src": "PPI"
+},
+{
+"date": "2026-03-19",
+"time": "13:00",
+"title": "Fed: decisión de tipos (FOMC)",
+"kind": "fed",
+"src": "FOMC Statement"
+},
+{
+"date": "2026-03-19",
+"time": "13:30",
+"title": "Fed: habla el presidente",
+"kind": "fed",
+"src": "FOMC Press Conference"
+},
+{
+"date": "2026-03-20",
+"kind": "none"
+},
+{
+"date": "2026-03-23",
+"kind": "none"
+},
+{
+"date": "2026-03-24",
+"kind": "none"
+},
+{
+"date": "2026-03-25",
+"kind": "none"
+},
+{
+"date": "2026-03-26",
+"kind": "none"
+},
+{
+"date": "2026-03-27",
+"kind": "none"
+},
+{
+"date": "2026-03-30",
+"kind": "none"
+},
+{
+"date": "2026-03-31",
+"time": "09:30",
+"title": "Fed: habla el presidente",
+"kind": "fed",
+"src": "Fed Chair Powell Speaks"
+},
+{
+"date": "2026-04-01",
+"time": "09:00",
+"title": "Ofertas de empleo (JOLTS)",
+"kind": "macro",
+"src": "JOLTS Job Openings"
+},
+{
+"date": "2026-04-02",
+"time": "07:30",
+"title": "Ventas minoristas",
+"kind": "macro",
+"src": "Core Retail Sales"
+},
+{
+"date": "2026-04-02",
+"time": "09:00",
+"title": "ISM manufacturero",
+"kind": "macro",
+"src": "ISM Manufacturing PMI"
+},
+{
+"date": "2026-04-03",
+"kind": "none"
+},
+{
+"date": "2026-04-06",
+"kind": "none"
+},
+{
+"date": "2026-04-07",
+"time": "09:00",
+"title": "ISM servicios",
+"kind": "macro",
+"src": "ISM Non-Manufacturing PMI"
+},
+{
+"date": "2026-04-08",
+"kind": "none"
+},
+{
+"date": "2026-04-09",
+"time": "13:00",
+"title": "Fed: actas del FOMC",
+"kind": "fed",
+"src": "FOMC Meeting Minutes"
+},
+{
+"date": "2026-04-10",
+"time": "07:30",
+"title": "PCE – inflación preferida por la Fed",
+"kind": "macro",
+"src": "Core PCE Price Index"
+},
+{
+"date": "2026-04-10",
+"time": "07:30",
+"title": "PIB (GDP)",
+"kind": "macro",
+"src": "GDP"
+},
+{
+"date": "2026-04-13",
+"kind": "none"
+},
+{
+"date": "2026-04-14",
+"kind": "none"
+},
+{
+"date": "2026-04-15",
+"time": "07:30",
+"title": "IPP (PPI) – precios de producción",
+"kind": "macro",
+"src": "PPI"
+},
+{
+"date": "2026-04-16",
+"time": "",
+"title": "Resultados de TSMC",
+"kind": "resultados",
+"sym": "TSM"
+},
+{
+"date": "2026-04-16",
+"time": "",
+"title": "Resultados de Netflix",
+"kind": "resultados",
+"sym": "NFLX"
+},
+{
+"date": "2026-04-17",
+"kind": "none"
+},
+{
+"date": "2026-04-20",
+"kind": "none"
+},
+{
+"date": "2026-04-21",
+"kind": "none"
+},
+{
+"date": "2026-04-22",
+"time": "",
+"title": "Resultados de Tesla",
+"kind": "resultados",
+"sym": "TSLA"
+},
+{
+"date": "2026-04-22",
+"time": "07:30",
+"title": "Ventas minoristas",
+"kind": "macro",
+"src": "Core Retail Sales"
+},
+{
+"date": "2026-04-23",
+"kind": "none"
+},
+{
+"date": "2026-04-24",
+"kind": "none"
+},
+{
+"date": "2026-04-27",
+"kind": "none"
+},
+{
+"date": "2026-04-28",
+"kind": "none"
+},
+{
+"date": "2026-04-29",
+"time": "",
+"title": "Resultados de Microsoft",
+"kind": "resultados",
+"sym": "MSFT"
+},
+{
+"date": "2026-04-29",
+"time": "",
+"title": "Resultados de Alphabet (Google)",
+"kind": "resultados",
+"sym": "GOOGL"
+},
+{
+"date": "2026-04-29",
+"time": "",
+"title": "Resultados de Amazon",
+"kind": "resultados",
+"sym": "AMZN"
+},
+{
+"date": "2026-04-29",
+"time": "",
+"title": "Resultados de Meta",
+"kind": "resultados",
+"sym": "META"
+},
+{
+"date": "2026-04-30",
+"time": "",
+"title": "Resultados de Apple",
+"kind": "resultados",
+"sym": "AAPL"
+},
+{
+"date": "2026-04-30",
+"time": "13:00",
+"title": "Fed: decisión de tipos (FOMC)",
+"kind": "fed",
+"src": "FOMC Statement"
+},
+{
+"date": "2026-04-30",
+"time": "13:30",
+"title": "Fed: habla el presidente",
+"kind": "fed",
+"src": "FOMC Press Conference"
+},
+{
+"date": "2026-05-01",
+"time": "07:30",
+"title": "PCE – inflación preferida por la Fed",
+"kind": "macro",
+"src": "Core PCE Price Index"
+},
+{
+"date": "2026-05-01",
+"time": "07:30",
+"title": "PIB (GDP)",
+"kind": "macro",
+"src": "GDP"
+},
+{
+"date": "2026-05-04",
+"kind": "none"
+},
+{
+"date": "2026-05-05",
+"time": "",
+"title": "Resultados de AMD",
+"kind": "resultados",
+"sym": "AMD"
+},
+{
+"date": "2026-05-06",
+"time": "09:00",
+"title": "ISM servicios",
+"kind": "macro",
+"src": "ISM Non-Manufacturing PMI"
+},
+{
+"date": "2026-05-06",
+"time": "09:00",
+"title": "Ofertas de empleo (JOLTS)",
+"kind": "macro",
+"src": "JOLTS Job Openings"
+},
+{
+"date": "2026-05-07",
+"kind": "none"
+},
+{
+"date": "2026-05-08",
+"kind": "none"
+},
+{
+"date": "2026-05-11",
+"kind": "none"
+},
+{
+"date": "2026-05-12",
+"kind": "none"
+},
+{
+"date": "2026-05-13",
+"time": "07:30",
+"title": "IPC (CPI) – inflación",
+"kind": "macro",
+"src": "CPI"
+},
+{
+"date": "2026-05-14",
+"time": "07:30",
+"title": "IPP (PPI) – precios de producción",
+"kind": "macro",
+"src": "PPI"
+},
+{
+"date": "2026-05-15",
+"time": "07:30",
+"title": "Ventas minoristas",
+"kind": "macro",
+"src": "Core Retail Sales"
+},
+{
+"date": "2026-05-18",
+"kind": "none"
+},
+{
+"date": "2026-05-19",
+"kind": "none"
+},
+{
+"date": "2026-05-20",
+"time": "",
+"title": "Resultados de Nvidia",
+"kind": "resultados",
+"sym": "NVDA"
+},
+{
+"date": "2026-05-21",
+"time": "13:00",
+"title": "Fed: actas del FOMC",
+"kind": "fed",
+"src": "FOMC Meeting Minutes"
+},
+{
+"date": "2026-05-22",
+"kind": "none"
+},
+{
+"date": "2026-05-25",
+"kind": "none"
+},
+{
+"date": "2026-05-26",
+"kind": "none"
+},
+{
+"date": "2026-05-27",
+"kind": "none"
+},
+{
+"date": "2026-05-28",
+"kind": "none"
+},
+{
+"date": "2026-05-29",
+"time": "07:30",
+"title": "PCE – inflación preferida por la Fed",
+"kind": "macro",
+"src": "Core PCE Price Index"
+},
+{
+"date": "2026-05-29",
+"time": "07:30",
+"title": "PIB (GDP)",
+"kind": "macro",
+"src": "GDP"
+},
+{
+"date": "2026-06-01",
+"time": "19:30",
+"title": "Fed: habla el presidente",
+"kind": "fed",
+"src": "Fed Chair Powell Speaks"
+},
+{
+"date": "2026-06-02",
+"time": "09:00",
+"title": "ISM manufacturero",
+"kind": "macro",
+"src": "ISM Manufacturing PMI"
+},
+{
+"date": "2026-06-03",
+"time": "",
+"title": "Resultados de Broadcom",
+"kind": "resultados",
+"sym": "AVGO"
+},
+{
+"date": "2026-06-03",
+"time": "09:00",
+"title": "Ofertas de empleo (JOLTS)",
+"kind": "macro",
+"src": "JOLTS Job Openings"
+},
+{
+"date": "2026-06-04",
+"time": "09:00",
+"title": "ISM servicios",
+"kind": "macro",
+"src": "ISM Non-Manufacturing PMI"
+},
+{
+"date": "2026-06-05",
+"kind": "none"
+},
+{
+"date": "2026-06-08",
+"kind": "none"
+},
+{
+"date": "2026-06-09",
+"kind": "none"
+},
+{
+"date": "2026-06-10",
+"kind": "none"
+},
+{
+"date": "2026-06-11",
+"time": "07:30",
+"title": "IPC (CPI) – inflación",
+"kind": "macro",
+"src": "CPI"
+},
+{
+"date": "2026-06-12",
+"time": "07:30",
+"title": "IPP (PPI) – precios de producción",
+"kind": "macro",
+"src": "PPI"
+},
+{
+"date": "2026-06-15",
+"kind": "none"
+},
+{
+"date": "2026-06-16",
+"kind": "none"
+},
+{
+"date": "2026-06-17",
+"kind": "none"
+},
+{
+"date": "2026-06-18",
+"time": "07:30",
+"title": "Ventas minoristas",
+"kind": "macro",
+"src": "Core Retail Sales"
+},
+{
+"date": "2026-06-18",
+"time": "13:00",
+"title": "Fed: decisión de tipos (FOMC)",
+"kind": "fed",
+"src": "FOMC Statement"
+},
+{
+"date": "2026-06-18",
+"time": "13:30",
+"title": "Fed: habla el presidente",
+"kind": "fed",
+"src": "FOMC Press Conference"
+},
+{
+"date": "2026-06-19",
+"kind": "none"
+},
+{
+"date": "2026-06-22",
+"kind": "none"
+},
+{
+"date": "2026-06-23",
+"kind": "none"
+},
+{
+"date": "2026-06-24",
+"kind": "none"
+},
+{
+"date": "2026-06-25",
+"kind": "none"
+},
+{
+"date": "2026-06-26",
+"time": "07:30",
+"title": "PCE – inflación preferida por la Fed",
+"kind": "macro",
+"src": "Core PCE Price Index"
+},
+{
+"date": "2026-06-26",
+"time": "07:30",
+"title": "PIB (GDP)",
+"kind": "macro",
+"src": "GDP"
+},
+{
+"date": "2026-06-29",
+"kind": "none"
+},
+{
+"date": "2026-06-30",
+"kind": "none"
+},
+{
+"date": "2026-07-01",
+"time": "09:00",
+"title": "Ofertas de empleo (JOLTS)",
+"kind": "macro",
+"src": "JOLTS Job Openings"
+},
+{
+"date": "2026-07-02",
+"time": "08:00",
+"title": "Fed: habla el presidente",
+"kind": "fed",
+"src": "Fed Chair Warsh Speaks"
+},
+{
+"date": "2026-07-02",
+"time": "09:00",
+"title": "ISM manufacturero",
+"kind": "macro",
+"src": "ISM Manufacturing PMI"
+},
+{
+"date": "2026-07-03",
+"time": "07:30",
+"title": "Nóminas no agrícolas (NFP) – empleo",
+"kind": "macro",
+"src": "Nonfarm Payrolls"
+},
+{
+"date": "2026-07-06",
+"kind": "none"
+},
+{
+"date": "2026-07-07",
+"time": "09:00",
+"title": "ISM servicios",
+"kind": "macro",
+"src": "ISM Non-Manufacturing PMI"
+},
+{
+"date": "2026-07-08",
+"kind": "none"
+},
+{
+"date": "2026-07-09",
+"time": "13:00",
+"title": "Fed: actas del FOMC",
+"kind": "fed",
+"src": "FOMC Meeting Minutes"
+},
+{
+"date": "2026-07-10",
+"kind": "none"
+},
+{
+"date": "2026-07-13",
+"kind": "none"
+},
+{
+"date": "2026-07-14",
+"kind": "none"
+},
+{
+"date": "2026-07-15",
+"time": "07:30",
+"title": "IPC (CPI) – inflación",
+"kind": "macro",
+"src": "CPI"
+},
+{
+"date": "2026-07-16",
+"time": "",
+"title": "Resultados de TSMC",
+"kind": "resultados",
+"sym": "TSM"
+},
+{
+"date": "2026-07-16",
+"time": "",
+"title": "Resultados de Netflix",
+"kind": "resultados",
+"sym": "NFLX"
+},
+{
+"date": "2026-07-16",
+"time": "07:30",
+"title": "IPP (PPI) – precios de producción",
+"kind": "macro",
+"src": "PPI"
+},
+{
+"date": "2026-07-17",
+"time": "07:30",
+"title": "Ventas minoristas",
+"kind": "macro",
+"src": "Core Retail Sales"
+},
+{
+"date": "2026-07-20",
+"kind": "none"
+},
+{
+"date": "2026-07-21",
+"kind": "none"
+},
+{
+"date": "2026-07-22",
+"time": "",
+"title": "Resultados de Alphabet (Google)",
+"kind": "resultados",
+"sym": "GOOGL"
+},
+{
+"date": "2026-07-22",
+"time": "",
+"title": "Resultados de Tesla",
+"kind": "resultados",
+"sym": "TSLA"
+},
+{
+"date": "2026-07-23",
+"kind": "none"
+},
+{
+"date": "2026-07-24",
+"kind": "none"
+},
+{
+"date": "2026-07-27",
+"kind": "none"
+},
+{
+"date": "2026-07-28",
+"kind": "none"
+},
+{
+"date": "2026-07-29",
+"time": "",
+"title": "Resultados de Microsoft",
+"kind": "resultados",
+"sym": "MSFT"
+},
+{
+"date": "2026-07-29",
+"time": "",
+"title": "Resultados de Meta",
+"kind": "resultados",
+"sym": "META"
+},
+{
+"date": "2026-07-30",
+"time": "",
+"title": "Resultados de Apple",
+"kind": "resultados",
+"sym": "AAPL"
+},
+{
+"date": "2026-07-30",
+"time": "",
+"title": "Resultados de Amazon",
+"kind": "resultados",
+"sym": "AMZN"
+},
+{
+"date": "2026-07-30",
+"time": "13:00",
+"title": "Fed: decisión de tipos (FOMC)",
+"kind": "fed",
+"src": "FOMC Statement"
+},
+{
+"date": "2026-07-30",
+"time": "13:30",
+"title": "Fed: habla el presidente",
+"kind": "fed",
+"src": "FOMC Press Conference"
+},
+{
+"date": "2026-07-31",
+"time": "07:30",
+"title": "PCE – inflación preferida por la Fed",
+"kind": "macro",
+"src": "Core PCE Price Index"
+},
+{
+"date": "2026-07-31",
+"time": "07:30",
+"title": "PIB (GDP)",
+"kind": "macro",
+"src": "GDP"
+},
+{
+"date": "2026-08-03",
+"kind": "none"
+},
+{
+"date": "2026-08-04",
+"time": "",
+"title": "Resultados de AMD",
+"kind": "resultados",
+"sym": "AMD"
+},
+{
+"date": "2026-08-04",
+"time": "09:00",
+"title": "ISM manufacturero",
+"kind": "macro",
+"src": "ISM Manufacturing PMI"
+},
+{
+"date": "2026-08-05",
+"time": "09:00",
+"title": "Ofertas de empleo (JOLTS)",
+"kind": "macro",
+"src": "JOLTS Job Openings"
+},
+{
+"date": "2026-08-06",
+"time": "09:00",
+"title": "ISM servicios",
+"kind": "macro",
+"src": "ISM Non-Manufacturing PMI"
+},
+{
+"date": "2026-08-07",
+"kind": "none"
+},
+{
+"date": "2026-08-10",
+"kind": "none"
+},
+{
+"date": "2026-08-11",
+"kind": "none"
+},
+{
+"date": "2026-08-12",
+"kind": "none"
+},
+{
+"date": "2026-08-13",
+"time": "07:30",
+"title": "IPC (CPI) – inflación",
+"kind": "macro",
+"src": "CPI"
+},
+{
+"date": "2026-08-14",
+"time": "07:30",
+"title": "IPP (PPI) – precios de producción",
+"kind": "macro",
+"src": "PPI"
+},
+{
+"date": "2026-08-17",
+"kind": "none"
+},
+{
+"date": "2026-08-18",
+"kind": "none"
+},
+{
+"date": "2026-08-19",
+"kind": "none"
+},
+{
+"date": "2026-08-20",
+"time": "13:00",
+"title": "Fed: actas del FOMC",
+"kind": "fed",
+"src": "FOMC Meeting Minutes"
+},
+{
+"date": "2026-08-21",
+"kind": "none"
+},
+{
+"date": "2026-08-24",
+"kind": "none"
+},
+{
+"date": "2026-08-25",
+"kind": "none"
+},
+{
+"date": "2026-08-26",
+"time": "",
+"title": "Resultados de Nvidia",
+"kind": "resultados",
+"sym": "NVDA"
+},
+{
+"date": "2026-08-27",
+"time": "07:30",
+"title": "PCE – inflación preferida por la Fed",
+"kind": "macro",
+"src": "Core PCE Price Index"
+},
+{
+"date": "2026-08-27",
+"time": "07:30",
+"title": "PIB (GDP)",
+"kind": "macro",
+"src": "GDP"
+},
+{
+"date": "2026-08-28",
+"kind": "none"
+},
+{
+"date": "2026-08-31",
+"kind": "none"
+},
+{
+"date": "2026-09-01",
+"kind": "none"
+},
+{
+"date": "2026-09-02",
+"time": "",
+"title": "Resultados de Broadcom",
+"kind": "resultados",
+"sym": "AVGO"
+},
+{
+"date": "2026-09-02",
+"time": "09:00",
+"title": "ISM manufacturero",
+"kind": "macro",
+"src": "ISM Manufacturing PMI"
+},
+{
+"date": "2026-09-02",
+"time": "09:00",
+"title": "Ofertas de empleo (JOLTS)",
+"kind": "macro",
+"src": "JOLTS Job Openings"
+},
+{
+"date": "2026-09-03",
+"kind": "none"
+},
+{
+"date": "2026-09-04",
+"time": "09:00",
+"title": "ISM servicios",
+"kind": "macro",
+"src": "ISM Non-Manufacturing PMI"
+},
+{
+"date": "2026-09-07",
+"kind": "none"
+},
+{
+"date": "2026-09-08",
+"kind": "none"
+},
+{
+"date": "2026-09-09",
+"kind": "none"
+},
+{
+"date": "2026-09-10",
+"kind": "none"
+},
+{
+"date": "2026-09-11",
+"time": "07:30",
+"title": "IPP (PPI) – precios de producción",
+"kind": "macro",
+"src": "PPI"
+},
+{
+"date": "2026-09-14",
+"kind": "none"
+},
+{
+"date": "2026-09-15",
+"kind": "none"
+},
+{
+"date": "2026-09-16",
+"kind": "none"
+},
+{
+"date": "2026-09-17",
+"time": "07:30",
+"title": "Ventas minoristas",
+"kind": "macro",
+"src": "Core Retail Sales"
+},
+{
+"date": "2026-09-17",
+"time": "13:00",
+"title": "Fed: decisión de tipos (FOMC)",
+"kind": "fed",
+"src": "FOMC Statement"
+},
+{
+"date": "2026-09-17",
+"time": "13:30",
+"title": "Fed: habla el presidente",
+"kind": "fed",
+"src": "FOMC Press Conference"
+},
+{
+"date": "2026-09-18",
+"kind": "none"
+},
+{
+"date": "2026-09-21",
+"kind": "none"
+},
+{
+"date": "2026-09-22",
+"kind": "none"
+},
+{
+"date": "2026-09-23",
+"kind": "none"
+},
+{
+"date": "2026-09-24",
+"kind": "none"
+},
+{
+"date": "2026-09-25",
+"kind": "none"
+},
+{
+"date": "2026-09-28",
+"kind": "none"
+},
+{
+"date": "2026-09-29",
+"kind": "none"
+},
+{
+"date": "2026-09-30",
+"time": "09:00",
+"title": "Ofertas de empleo (JOLTS)",
+"kind": "macro",
+"src": "JOLTS Job Openings"
+},
+{
+"date": "2026-10-01",
+"time": "07:30",
+"title": "PCE – inflación preferida por la Fed",
+"kind": "macro",
+"src": "Core PCE Price Index"
+},
+{
+"date": "2026-10-01",
+"time": "07:30",
+"title": "PIB (GDP)",
+"kind": "macro",
+"src": "GDP"
+},
+{
+"date": "2026-10-02",
+"time": "09:00",
+"title": "ISM manufacturero",
+"kind": "macro",
+"src": "ISM Manufacturing PMI"
+},
+{
+"date": "2026-10-05",
+"kind": "none"
+},
+{
+"date": "2026-10-06",
+"time": "09:00",
+"title": "ISM servicios",
+"kind": "macro",
+"src": "ISM Non-Manufacturing PMI"
+},
+{
+"date": "2026-10-07",
+"kind": "none"
+},
+{
+"date": "2026-10-08",
+"time": "13:00",
+"title": "Fed: actas del FOMC",
+"kind": "fed",
+"src": "FOMC Meeting Minutes"
+},
+{
+"date": "2026-10-09",
+"kind": "none"
+},
+{
+"date": "2026-10-12",
+"kind": "none"
+},
+{
+"date": "2026-10-13",
+"kind": "none"
+},
+{
+"date": "2026-10-14",
+"kind": "none"
+},
+{
+"date": "2026-10-15",
+"time": "",
+"title": "Resultados de TSMC",
+"kind": "resultados",
+"sym": "TSM"
+},
+{
+"date": "2026-10-15",
+"time": "07:30",
+"title": "IPC (CPI) – inflación",
+"kind": "macro",
+"src": "CPI"
+},
+{
+"date": "2026-10-16",
+"time": "07:30",
+"title": "Ventas minoristas",
+"kind": "macro",
+"src": "Core Retail Sales"
+},
+{
+"date": "2026-10-16",
+"time": "07:30",
+"title": "IPP (PPI) – precios de producción",
+"kind": "macro",
+"src": "PPI"
+},
+{
+"date": "2026-10-16",
+"time": "22:30",
+"title": "Fed: habla el presidente",
+"kind": "fed",
+"src": "Fed Chair Warsh Speaks"
+},
+{
+"date": "2026-10-19",
+"kind": "none"
+},
+{
+"date": "2026-10-20",
+"time": "",
+"title": "Resultados de Netflix",
+"kind": "resultados",
+"sym": "NFLX"
+},
+{
+"date": "2026-10-21",
+"time": "",
+"title": "Resultados de Meta",
+"kind": "resultados",
+"sym": "META"
+},
+{
+"date": "2026-10-21",
+"time": "",
+"title": "Resultados de Tesla",
+"kind": "resultados",
+"sym": "TSLA"
+},
+{
+"date": "2026-10-22",
+"kind": "none"
+},
+{
+"date": "2026-10-23",
+"kind": "none"
+},
+{
+"date": "2026-10-26",
+"kind": "none"
+},
+{
+"date": "2026-10-27",
+"kind": "none"
+},
+{
+"date": "2026-10-28",
+"time": "",
+"title": "Resultados de Microsoft",
+"kind": "resultados",
+"sym": "MSFT"
+},
+{
+"date": "2026-10-28",
+"time": "",
+"title": "Resultados de Alphabet (Google)",
+"kind": "resultados",
+"sym": "GOOGL"
+},
+{
+"date": "2026-10-29",
+"time": "",
+"title": "Resultados de Amazon",
+"kind": "resultados",
+"sym": "AMZN"
+},
+{
+"date": "2026-10-29",
+"time": "13:00",
+"title": "Fed: decisión de tipos (FOMC)",
+"kind": "fed",
+"src": "FOMC Statement"
+},
+{
+"date": "2026-10-29",
+"time": "13:30",
+"title": "Fed: habla el presidente",
+"kind": "fed",
+"src": "FOMC Press Conference"
+},
+{
+"date": "2026-10-30",
+"time": "07:30",
+"title": "PCE – inflación preferida por la Fed",
+"kind": "macro",
+"src": "Core PCE Price Index"
+},
+{
+"date": "2026-10-30",
+"time": "07:30",
+"title": "PIB (GDP)",
+"kind": "macro",
+"src": "GDP"
+},
+{
+"date": "2026-11-02",
+"time": "",
+"title": "Resultados de Apple",
+"kind": "resultados",
+"sym": "AAPL"
+},
+{
+"date": "2026-11-03",
+"time": "",
+"title": "Resultados de AMD",
+"kind": "resultados",
+"sym": "AMD"
+},
+{
+"date": "2026-11-03",
+"time": "10:00",
+"title": "ISM manufacturero",
+"kind": "macro",
+"src": "ISM Manufacturing PMI"
+},
+{
+"date": "2026-11-04",
+"time": "10:00",
+"title": "Ofertas de empleo (JOLTS)",
+"kind": "macro",
+"src": "JOLTS Job Openings"
+},
+{
+"date": "2026-11-05",
+"time": "10:00",
+"title": "ISM servicios",
+"kind": "macro",
+"src": "ISM Non-Manufacturing PMI"
+},
+{
+"date": "2026-11-06",
+"kind": "none"
+},
+{
+"date": "2026-11-09",
+"kind": "none"
+},
+{
+"date": "2026-11-10",
+"kind": "none"
+},
+{
+"date": "2026-11-11",
+"time": "08:30",
+"title": "IPC (CPI) – inflación",
+"kind": "macro",
+"src": "CPI"
+},
+{
+"date": "2026-11-12",
+"kind": "none"
+},
+{
+"date": "2026-11-13",
+"kind": "none"
+},
+{
+"date": "2026-11-16",
+"kind": "none"
+},
+{
+"date": "2026-11-17",
+"time": "",
+"title": "Resultados de Nvidia",
+"kind": "resultados",
+"sym": "NVDA"
+},
+{
+"date": "2026-11-17",
+"time": "12:00",
+"title": "Fed: habla el presidente",
+"kind": "fed",
+"src": "Fed Chair Warsh Speaks"
+},
+{
+"date": "2026-11-18",
+"time": "08:30",
+"title": "Ventas minoristas",
+"kind": "macro",
+"src": "Core Retail Sales"
+}
+]
