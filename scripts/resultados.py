@@ -1,4 +1,4 @@
-"""Fechas de resultados de las 7 magníficas (Nasdaq.com), para el Diario de Disciplina.
+"""Fechas de resultados de las 7 magníficas y otras grandes del Nasdaq 100 (Nasdaq.com), para el Diario de Disciplina.
 
 Escribe resultados.json: [{"sym","name","date","time"}], time = "amc" (después del cierre),
 "bmo" (antes de la apertura) o "" (sin confirmar). Si una consulta falla, conserva lo anterior.
@@ -6,7 +6,9 @@ Escribe resultados.json: [{"sym","name","date","time"}], time = "amc" (después 
 import json, re, sys, time, datetime as dt, urllib.request
 
 SYMS = {"AAPL": "Apple", "MSFT": "Microsoft", "NVDA": "Nvidia", "AMZN": "Amazon",
-        "GOOGL": "Alphabet (Google)", "META": "Meta", "TSLA": "Tesla"}
+        "GOOGL": "Alphabet (Google)", "META": "Meta", "TSLA": "Tesla",
+        # also heavy in the Nasdaq 100 / chip bellwethers
+        "AVGO": "Broadcom", "NFLX": "Netflix", "AMD": "AMD", "TSM": "TSMC"}
 HDR = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130 Safari/537.36",
        "Accept": "application/json, text/plain, */*", "Accept-Language": "en-US,en;q=0.9",
        "Origin": "https://www.nasdaq.com", "Referer": "https://www.nasdaq.com/"}
@@ -51,7 +53,7 @@ def main():
             if sym in old: out.append(old[sym])
         time.sleep(2)
     if not ok:
-        print("::warning::Nasdaq no ha respondido; se mantienen las fechas anteriores."); return
+        print("::warning::Nasdaq no ha respondido; se mantienen las fechas anteriores."); sys.exit(3)
     # keep recent past reports (for the calendar history) that are no longer the "next" date
     seen = {(e["sym"], e["date"]) for e in out}
     cutoff = (dt.date.today() - dt.timedelta(days=120)).isoformat()

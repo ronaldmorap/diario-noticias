@@ -18,61 +18,53 @@ jobs:
   descargar:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - name: Descargar la semana de Forex Factory
+      # Each source is independent: if one fails, the app keeps its previous data.
+      - name: Forex Factory (cada 3 horas)
         id: ff
+        continue-on-error: true
         run: |
-          ok=0
           for i in 1 2 3; do
             code=$(curl -s -o nuevo.json -w "%{http_code}" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" \
               "https://nfs.faireconomy.media/ff_calendar_thisweek.json" || true)
             echo "Intento $i: HTTP $code"
-            if [ "$code" = "200" ] && head -c 1 nuevo.json | grep -q '\['; then ok=1; break; fi
+            if [ "$code" = "200" ] && head -c 1 nuevo.json | grep -q '\['; then
+              python3 -c "import json; d=json.load(open('nuevo.json')); assert isinstance(d,list) and d; print(len(d),'noticias')"
+              cmp -s nuevo.json ff-semana.json || mv nuevo.json ff-semana.json
+              rm -f nuevo.json
+              python3 scripts/estado.py ff
+              exit 0
+            fi
             sleep 60
           done
-          echo "ok=$ok" >> "$GITHUB_OUTPUT"
+          rm -f nuevo.json
+          echo "::warning::Forex Factory no ha dejado descargar esta vez. Se reintentará en la próxima ejecución."
+          exit 1
 
-      - name: Guardar si ha cambiado
-        if: steps.ff.outputs.ok == '1'
+      # Earnings and IPO dates rarely change: only twice a day (and when the scripts change).
+      - name: ¿Toca consultar Nasdaq?
+        id: turno
         run: |
-          python3 -c "import json; d=json.load(open('nuevo.json')); assert isinstance(d,list) and d; print(len(d),'noticias')"
-          if [ -f ff-semana.json ] && cmp -s nuevo.json ff-semana.json; then
-            echo "Sin cambios"; rm nuevo.json; exit 0
-          fi
-          mv nuevo.json ff-semana.json
-          git config user.name "noticias-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ff-semana.json
-          git commit -m "Actualiza noticias de la semana"
-          git push
+          H=$(date -u +%H)
+          if [ "$GITHUB_EVENT_NAME" != "schedule" ] || [ "$H" = "06" ] || [ "$H" = "18" ]; then echo "si=1" >> "$GITHUB_OUTPUT"; else echo "si=0" >> "$GITHUB_OUTPUT"; fi
 
-      - name: Resultados de las 7 magníficas
-        run: |
-          python3 scripts/resultados.py
-          if [ -f resultados.json ] && ! git diff --quiet -- resultados.json 2>/dev/null || [ -n "$(git ls-files --others --exclude-standard resultados.json)" ]; then
-            git config user.name "noticias-bot"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git pull -q --rebase origin main || true
-            git add resultados.json
-            git commit -m "Actualiza fechas de resultados" && git push || true
-          else
-            echo "Resultados sin cambios"
-          fi
+      - name: Resultados de empresas
+        if: steps.turno.outputs.si == '1'
+        continue-on-error: true
+        run: python3 scripts/resultados.py && python3 scripts/estado.py resultados
 
       - name: Grandes salidas a bolsa
-        run: |
-          python3 scripts/salidas.py
-          if [ -f salidas.json ] && { ! git diff --quiet -- salidas.json 2>/dev/null || [ -n "$(git ls-files --others --exclude-standard salidas.json)" ]; }; then
-            git config user.name "noticias-bot"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git pull -q --rebase origin main || true
-            git add salidas.json
-            git commit -m "Actualiza grandes salidas a bolsa" && git push || true
-          else
-            echo "Salidas sin cambios"
-          fi
+        if: steps.turno.outputs.si == '1'
+        continue-on-error: true
+        run: python3 scripts/salidas.py && python3 scripts/estado.py salidas
 
-      - name: Aviso si Forex Factory no responde
-        if: steps.ff.outputs.ok != '1'
-        run: echo "::warning::Forex Factory no ha dejado descargar esta vez. Se reintentará en la próxima ejecución."
+      - name: Guardar cambios
+        run: |
+          git config user.name "noticias-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- '*.json'
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git commit -q -m "Actualiza noticias"
+          git pull -q --rebase origin main || true
+          git push

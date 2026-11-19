@@ -3,7 +3,7 @@
 Escribe salidas.json: [{"date","name","ticker","exchange","price","amount","status"}].
 Solo guarda las grandes (por defecto >= 2.000 millones de dólares), que son las que pueden mover el mercado.
 """
-import json, re, time, datetime as dt, urllib.request
+import json, re, sys, time, datetime as dt, urllib.request
 
 MIN_AMOUNT = 2_000_000_000
 HDR = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130 Safari/537.36",
@@ -56,7 +56,7 @@ def main():
                     "amount": amount, "status": status}
         time.sleep(2)
     if not ok:
-        print("::warning::Nasdaq no ha respondido; se mantienen las salidas anteriores."); return
+        print("::warning::Nasdaq no ha respondido; se mantienen las salidas anteriores."); sys.exit(3)
     try: prev = json.load(open("salidas.json"))
     except Exception: prev = []
     cutoff = (today - dt.timedelta(days=120)).isoformat()
