@@ -194,6 +194,14 @@
 },
 {
 "date": "2025-12-17",
+"time": "",
+"kind": "salida",
+"title": "Salida a bolsa de Medline (MDLN)",
+"sym": "MDLN",
+"amount": 6264999978.0
+},
+{
+"date": "2025-12-17",
 "time": "08:29",
 "title": "Nóminas no agrícolas (NFP) – empleo",
 "kind": "macro",
@@ -759,6 +767,14 @@
 "sym": "NFLX"
 },
 {
+"date": "2026-04-16",
+"time": "",
+"kind": "salida",
+"title": "Salida a bolsa de Madison Air Solutions (MAIR)",
+"sym": "MAIR",
+"amount": 2232692316.0
+},
+{
 "date": "2026-04-17",
 "kind": "none"
 },
@@ -827,6 +843,14 @@
 "title": "Resultados de Meta",
 "kind": "resultados",
 "sym": "META"
+},
+{
+"date": "2026-04-29",
+"time": "",
+"kind": "salida",
+"title": "Salida a bolsa de PERSHING SQUARE (PS)",
+"sym": "PS",
+"amount": 2025848000.0
 },
 {
 "date": "2026-04-30",
@@ -910,6 +934,14 @@
 "title": "IPC (CPI) – inflación",
 "kind": "macro",
 "src": "CPI"
+},
+{
+"date": "2026-05-14",
+"time": "",
+"kind": "salida",
+"title": "Salida a bolsa de Cerebras Systems (CBRS)",
+"sym": "CBRS",
+"amount": 5550000000.0
 },
 {
 "date": "2026-05-14",
@@ -1011,6 +1043,14 @@
 },
 {
 "date": "2026-06-04",
+"time": "",
+"kind": "salida",
+"title": "Salida a bolsa de INNIO N.V. (INIO)",
+"sym": "INIO",
+"amount": 2430000000.0
+},
+{
+"date": "2026-06-04",
 "time": "09:00",
 "title": "ISM servicios",
 "kind": "macro",
@@ -1038,6 +1078,14 @@
 "title": "IPC (CPI) – inflación",
 "kind": "macro",
 "src": "CPI"
+},
+{
+"date": "2026-06-12",
+"time": "",
+"kind": "salida",
+"title": "Salida a bolsa de SPACE EXPLORATION TECHNOLOGIES (SPCX)",
+"sym": "SPCX",
+"amount": 74999999925.0
 },
 {
 "date": "2026-06-12",
@@ -1174,6 +1222,14 @@
 {
 "date": "2026-07-10",
 "kind": "none"
+},
+{
+"date": "2026-07-10",
+"time": "",
+"kind": "salida",
+"title": "Salida a bolsa de SK hynix (SKHY)",
+"sym": "SKHY",
+"amount": 26507100000.0
 },
 {
 "date": "2026-07-13",
@@ -1835,5 +1891,20 @@
 "title": "Ventas minoristas",
 "kind": "macro",
 "src": "Core Retail Sales"
+},
+{
+"date": "2026-11-19",
+"time": "",
+"kind": "salida",
+"title": "Salida a bolsa de Anthropic (ANT)",
+"sym": "ANT",
+"amount": 81340000000.0
+},
+{
+"date": "2026-11-19",
+"time": "14:00",
+"title": "Fed: actas del FOMC",
+"kind": "fed",
+"src": "FOMC Meeting Minutes"
 }
 ]
