@@ -62,6 +62,7 @@ MIN_IPO = 2_000_000_000
 
 def ipo_title(name, tick):
     name = re.sub(r",? (Inc|PBC|Corp|Corporation|Ltd|plc|Holdings?)\.?$", "", (name or "").strip(), flags=re.I)
+    if name.isupper(): name = name.title()
     return f"Salida a bolsa de {name}" + (f" ({tick})" if tick else "")
 
 def money(v):

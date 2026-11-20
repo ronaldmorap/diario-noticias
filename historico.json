@@ -848,7 +848,7 @@
 "date": "2026-04-29",
 "time": "",
 "kind": "salida",
-"title": "Salida a bolsa de PERSHING SQUARE (PS)",
+"title": "Salida a bolsa de Pershing Square (PS)",
 "sym": "PS",
 "amount": 2025848000.0
 },
@@ -1045,7 +1045,7 @@
 "date": "2026-06-04",
 "time": "",
 "kind": "salida",
-"title": "Salida a bolsa de INNIO N.V. (INIO)",
+"title": "Salida a bolsa de Innio N.V. (INIO)",
 "sym": "INIO",
 "amount": 2430000000.0
 },
@@ -1083,7 +1083,7 @@
 "date": "2026-06-12",
 "time": "",
 "kind": "salida",
-"title": "Salida a bolsa de SPACE EXPLORATION TECHNOLOGIES (SPCX)",
+"title": "Salida a bolsa de Space Exploration Technologies (SPCX)",
 "sym": "SPCX",
 "amount": 74999999925.0
 },
