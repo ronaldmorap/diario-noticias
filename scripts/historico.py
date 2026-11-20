@@ -2,7 +2,8 @@
 
 Lee, día a día, el calendario económico y el de resultados de Nasdaq.com y se queda solo con lo que mueve
 el Nasdaq: datos macro clave de EEUU, la Fed y los resultados de las grandes del Nasdaq 100.
-Escribe historico.json: [{"date","time","title","kind"}]  (kind: macro | fed | resultados).
+Escribe historico.json: [{"date","time","title","kind"}]  (kind: macro | fed | resultados | salida).
+Las grandes salidas a bolsa (>= 2.000 M$) salen del calendario de IPOs de Nasdaq y de salidas.json, y nunca se borran.
 """
 import json, re, sys, time, datetime as dt, urllib.request
 
@@ -57,6 +58,45 @@ def earnings_for(day):
                         "title": f"Resultados de {SYMS[sym]}", "kind": "resultados", "sym": sym})
     return out
 
+MIN_IPO = 2_000_000_000
+
+def ipo_title(name, tick):
+    name = re.sub(r",? (Inc|PBC|Corp|Corporation|Ltd|plc|Holdings?)\.?$", "", (name or "").strip(), flags=re.I)
+    return f"Salida a bolsa de {name}" + (f" ({tick})" if tick else "")
+
+def money(v):
+    try: return float(re.sub(r"[^0-9.]", "", str(v)) or 0)
+    except Exception: return 0.0
+
+def ipos(today):
+    """Grandes salidas a bolsa ya hechas, mes a mes desde START, más las que guardó salidas.json."""
+    found, ym = {}, START.replace(day=1)
+    while ym <= today:
+        try:
+            d = (get(f"https://api.nasdaq.com/api/ipo/calendar?date={ym:%Y-%m}") or {}).get("data") or {}
+            rows = ((d.get("priced") or {}).get("rows") or [])
+            for r in rows:
+                amount = money(r.get("dollarValueOfSharesOffered"))
+                try: day = dt.datetime.strptime(str(r.get("pricedDate")).strip(), "%m/%d/%Y").date()
+                except Exception: continue
+                if amount < MIN_IPO or day >= today: continue
+                tick = (r.get("proposedTickerSymbol") or "").strip()
+                found[(tick or r.get("companyName"), day.isoformat())] = {"date": day.isoformat(), "time": "", "kind": "salida",
+                    "title": ipo_title(r.get("companyName"), tick), "sym": tick, "amount": amount}
+            print(f"{ym:%Y-%m} salidas cotizadas: {len(rows)}")
+        except Exception as e:
+            print(f"{ym:%Y-%m} salidas ERROR", e)
+        time.sleep(1)
+        ym = (ym + dt.timedelta(days=32)).replace(day=1)
+    try:
+        for x in json.load(open("salidas.json")):
+            if x.get("date", "") < today.isoformat() and (x.get("amount") or 0) >= MIN_IPO:
+                found.setdefault((x.get("ticker") or x.get("name"), x["date"]), {"date": x["date"], "time": "", "kind": "salida",
+                    "title": ipo_title(x.get("name"), x.get("ticker")), "sym": x.get("ticker") or "", "amount": x.get("amount")})
+    except Exception as e:
+        print("salidas.json no disponible", e)
+    return found
+
 def main():
     try: old = json.load(open("historico.json"))
     except Exception: old = []
@@ -76,6 +116,10 @@ def main():
                 if fails > 15: print("::warning::Demasiados fallos; se guarda lo conseguido."); break
                 time.sleep(5)
         day += dt.timedelta(days=1)
+    # Salidas a bolsa: se añaden las nuevas y nunca se quita ninguna ya guardada
+    have_ipo = {(e.get("sym") or e.get("title"), e["date"]) for e in out if e.get("kind") == "salida"}
+    for k, e in ipos(today).items():
+        if (e.get("sym") or e.get("title"), e["date"]) not in have_ipo: out.append(e); print("  + ", e["date"], e["title"])
     out.sort(key=lambda e: (e["date"], e.get("time") or ""))
     json.dump(out, open("historico.json", "w"), ensure_ascii=False, indent=0)
     print(len([e for e in out if e.get("kind") != "none"]), "eventos en el histórico")
