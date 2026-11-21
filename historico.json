@@ -1906,5 +1906,9 @@
 "title": "Fed: actas del FOMC",
 "kind": "fed",
 "src": "FOMC Meeting Minutes"
+},
+{
+"date": "2026-11-20",
+"kind": "none"
 }
 ]
