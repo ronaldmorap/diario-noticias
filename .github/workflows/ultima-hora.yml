@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Hot stories de impacto alto
-        run: python3 scripts/ultimahora.py && python3 scripts/estado.py ultima
+        run: python3 scripts/ultimahora.py
       - name: Guardar cambios
         run: |
           git config user.name "noticias-bot"
@@ -28,5 +28,6 @@ jobs:
           git add -- ultima-hora.json
           if git diff --cached --quiet; then echo "Sin noticias nuevas"; exit 0; fi
           git commit -q -m "Última hora"
+          git checkout -- . 2>/dev/null || true
           for i in 1 2 3; do git pull -q --rebase origin main && git push && exit 0; sleep 5; done
           exit 1
