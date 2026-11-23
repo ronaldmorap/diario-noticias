@@ -43,8 +43,8 @@ def main():
         pagina = descargar()
     except Exception as e:
         print("No se pudo descargar Forex Factory:", e); sys.exit(1)
-    if '"dateline"' not in pagina:
-        print("La página no trae noticias (¿bloqueo o cambio de web?)"); sys.exit(1)
+    if '"dateline"' not in html.unescape(pagina):
+        print("La página no trae noticias (¿bloqueo o cambio de web?)", len(pagina), pagina[:300].replace(chr(10), " ")); sys.exit(1)
     try:
         datos = json.load(open("ultima-hora.json", encoding="utf-8"))
     except Exception:
