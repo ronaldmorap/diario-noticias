@@ -81,13 +81,20 @@ def historias(pagina):
         vistas[sid] = {"t": t, "url": "https://www.forexfactory.com" + m.group(3).replace("\\/", "/"), "title": limpiar(m.group(4))}
     return vistas
 
+def fallo(msg):
+    """Un fallo suelto (Forex Factory lento o bloqueando un rato) no es grave: se reintenta a los 15 min.
+    Para no llenar el correo, solo se marca como error en la pasada de las 07:00 UTC (como mucho un aviso al día)."""
+    print(msg)
+    ahora = dt.datetime.now(dt.timezone.utc)
+    sys.exit(1 if (ahora.hour == 7 and ahora.minute < 15) else 0)
+
 def main():
     try:
         pagina = descargar()
     except Exception as e:
-        print("No se pudo descargar Forex Factory:", e); sys.exit(1)
+        fallo(f"No se pudo descargar Forex Factory: {e}")
     if '"dateline"' not in html.unescape(pagina):
-        print("La página no trae noticias (¿bloqueo o cambio de web?)", len(pagina), pagina[:300].replace(chr(10), " ")); sys.exit(1)
+        fallo(f"La página no trae noticias (¿bloqueo o cambio de web?) {len(pagina)} {pagina[:300]!r}")
     try:
         datos = json.load(open("ultima-hora.json", encoding="utf-8"))
     except Exception:
