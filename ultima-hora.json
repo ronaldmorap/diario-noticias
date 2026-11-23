@@ -1,9 +1,11 @@
 [
-  {
-    "date": "2026-11-23",
-    "ts": "2026-11-23T13:35:00Z",
-    "sym": "NVDA",
-    "title": "Nvidia readmite a Jensen Huang como CEO",
-    "note": "El consejo lo readmite con efecto inmediato, 11 días después de su dimisión y tras pedirlo Trump el domingo. Nvidia sube cerca de un 30 % y arrastra al Nasdaq al alza."
-  }
+ {
+  "date": "2026-11-23",
+  "ts": "2026-11-23T13:35:00Z",
+  "sym": "NVDA",
+  "title": "Nvidia readmite a Jensen Huang como CEO",
+  "note": "El consejo lo readmite con efecto inmediato, 11 días después de su dimisión y tras pedirlo Trump el domingo. Nvidia sube cerca de un 30 % y arrastra al Nasdaq al alza.",
+  "ff_id": 1438208,
+  "url": "https://www.forexfactory.com/news/1438208-nvidia-board-reinstates-jensen-huang-as-president-ceo"
+ }
 ]

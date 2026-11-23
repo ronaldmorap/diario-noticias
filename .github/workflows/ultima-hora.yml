@@ -1,0 +1,32 @@
+name: Noticias de última hora (Forex Factory, carpeta roja)
+
+on:
+  push:
+    paths: ["scripts/ultimahora.py", ".github/workflows/ultima-hora.yml"]
+  schedule:
+    - cron: "*/15 * * * *"   # cada 15 minutos (GitHub a veces se retrasa algo)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ultima-hora
+  cancel-in-progress: false
+
+jobs:
+  leer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Hot stories de impacto alto
+        run: python3 scripts/ultimahora.py && python3 scripts/estado.py ultima
+      - name: Guardar cambios
+        run: |
+          git config user.name "noticias-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- ultima-hora.json
+          if git diff --cached --quiet; then echo "Sin noticias nuevas"; exit 0; fi
+          git commit -q -m "Última hora"
+          for i in 1 2 3; do git pull -q --rebase origin main && git push && exit 0; sleep 5; done
+          exit 1
