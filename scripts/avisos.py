@@ -7,7 +7,7 @@ Uso:
   python3 scripts/avisos.py bienvenida  -> confirma a los dispositivos recién activados
 
 Necesita el secreto FIREBASE_SA (la clave de la cuenta de servicio de Firebase, en JSON).
-Sin él, no hace nada y sale sin error (secreto añadido el 23 nov 2026).
+Sin él, no hace nada y sale sin error (secreto añadido el 23 nov 2026; primer móvil activado).
 Los dispositivos se guardan en Firestore (colección pushSubs) desde la app; las claves VAPID en push/config
 (se crean solas la primera vez).
 """
