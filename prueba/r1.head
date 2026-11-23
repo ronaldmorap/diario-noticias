@@ -1,0 +1,46 @@
+<!DOCTYPE html> <html class="no-js" lang="en"> <head> <base href="https://www.forexfactory.com"> <meta charset="windows-1252"> <meta property="og:title" content="Forex News | Forex Factory" /> <meta property="og:description" content="Forex News - the fastest breaking news, useful Forex analysis, and Forex industry news, submitted from quality Forex news sources around the world." /> <meta property="og:type" content="website" /> <meta property="og:url" content="https://www.forexfactory.com/news" /> <meta property="og:image" content="https://resources.faireconomy.media/images/logos/bookmark_ff_400.png" /> <meta property="og:site_name" content="Forex Factory" /> <meta name="keywords" content="fx market news, forex fundamental analysis, technical analysis, breaking news alerts, news notifications, macroeconomic news"> <meta name="description" content="Forex News - the fastest breaking news, useful Forex analysis, and Forex industry news, submitted from quality Forex news sources around the world."> <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"> <meta name="csrf-token" content="007a71a45210eaaa22d4cb40488f376a"> <link rel="preconnect" href="https://resources.faireconomy.media"> <link rel="preconnect" href="https://assets.faireconomy.media"> <link rel="preconnect" href="https://www.googletagmanager.com"> <link rel="preconnect" href="https://www.google-analytics.com"> <link rel="preload" as="font" href="https://resources.faireconomy.media/fonts/ubuntu.woff" type="font/woff" crossorigin="anonymous">  <link rel="shortcut icon" href="https://resources.faireconomy.media/icon-ff.ico" type="image/x-icon"> <link rel="icon" href="https://resources.faireconomy.media/icon-ff.ico" type="image/ico"> <link rel="apple-touch-icon" sizes="400x400" href="https://resources.faireconomy.media/images/logos/bookmark_ff_400.png"> <link rel="apple-touch-icon" sizes="192x192" href="https://resources.faireconomy.media/images/logos/bookmark_ff_192.png">  <link rel="manifest" href="/manifests/manifest-ff.json">  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PC5QDXT');</script> <script>
+try {
+    window.hj = window.hj||function(){(hj.q=hj.q||[]).push(arguments);};
+    window.hj('identify', null, {
+        'Usergroup': 'Guest',
+        'MIRS': '',
+        'Joined': '2026-11-23T11:07:01-05:00',
+        'HTTP Status': 200,
+        'Client Timezone': Intl.DateTimeFormat().resolvedOptions().timeZone,
+        'User Timezone': 'America/Los_Angeles',
+        'Country Code': 'US',
+        'Time Format': 12,
+    });
+} catch { }
+</script>  <link type="text/css" rel="stylesheet" href="https://resources.faireconomy.media/css/ff.css?_v=1793115830" /> <script type="text/javascript">
+// Global FF settings object
+window.FF = {
+country_code: 'US',
+    content_group: 'News',
+    sub_content_group: 'index',
+    ad_group: '',
+    timezone: '-8'.replace('+', ''),
+    timezone_name: 'America/Los_Angeles',
+    display_time: '8:07am',
+    internal_referrer_uri: '',
+    weekstart: '1',
+    format : '12',
+    userid: 0,
+    cookie_prefix: 'ff',
+mds_socket: {
+domain: 'mds-wss.forexfactory.com',
+port: 2096
+},
+calendar_feed_endpoint: 'wss://calendar-feed.forexfactory.com:2087',
+    npd_api_endpoint: 'https://npd-api.forexfactory.com/api.php',
+    mds_api_endpoint: 'https://mds-api.forexfactory.com',
+    bds_api_endpoint: 'https://bds-api.forexfactory.com',
+    explorer_api_endpoint: 'https://explorer-api.forexfactory.com/api.php/',
+    mds_api_bearer: '',
+    bds_api_bearer: '',
+    is_android: false,
+    is_team: false,
+    perms: {
+        can_control_panel: false,
+        can_edit_microsite: false,
+        can_manage_cbase:

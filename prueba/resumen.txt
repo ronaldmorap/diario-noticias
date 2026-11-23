@@ -1,0 +1,6 @@
+https://www.forexfactory.com/news -> 200 288616
+https://www.forexfactory.com/rss/news -> 200 288621
+https://www.forexfactory.com/news.xml -> 404 40859
+https://www.forexfactory.com/feed -> 200 58872
+https://nfs.faireconomy.media/ff_news.xml -> 404 548
+https://nfs.faireconomy.media/ff_news.json -> 404 548
