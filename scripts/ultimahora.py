@@ -1,5 +1,5 @@
 """Noticias de última hora: lee las Hot Stories / Latest Stories de Forex Factory y guarda solo las de
-impacto ALTO (la carpeta roja) en ultima-hora.json. Las que se añadieron a mano (sin "src") no se tocan.
+impacto ALTO (la carpeta roja) que afectan al Nasdaq en ultima-hora.json. Las que se añadieron a mano (sin "src") no se tocan.
 Las guardadas no se borran nunca: sirven para el backtest."""
 import json, re, html, sys, datetime as dt, urllib.request
 
@@ -11,6 +11,28 @@ try:
     MADRID = ZoneInfo("Europe/Madrid")
 except Exception:
     pass
+
+# Solo lo que mueve el Nasdaq: EEUU (Fed, Trump, datos, aranceles...), grandes tecnológicas/IA/chips,
+# Banco de Japón y geopolítica gorda. Lo de otros países (UK, Europa, Canadá...) se descarta.
+SI = re.compile(r"\b(fed|fomc|powell|warsh|federal reserve|treasur(y|ies)|bessent|trump|white house|wall street|nasdaq|s&p|dow jones|"
+                r"united states|americans?|washington|congress|senate|shutdown|debt ceiling|tariffs?|sanctions?|trade war|"
+                r"payrolls?|nfp|cpi|pce|ism|jobless|jobs report|"
+                r"nvidia|nvda|apple|microsoft|amazon|alphabet|google|meta|tesla|broadcom|amd|tsmc|netflix|openai|anthropic|"
+                r"ai|artificial intelligence|chips?|semiconductors?|tech stocks|"
+                r"boj|bank of japan|china|chinese|beijing|xi jinping|taiwan|"
+                r"war|invasion|missiles?|strikes?|attack|nuclear|iran|israel|russia|ukraine|opec|oil)\b", re.I)
+EEUU = re.compile(r"(?<![A-Za-z])U\.?S\.?(?![A-Za-z])")   # "US", "U.S." (en mayúsculas, para no confundir con "us")
+OTROS = re.compile(r"^(uk|eurozone|euro area|ecb|boe|germany|german|france|french|italy|spain|canada|canadian|australia|australian|rba|rbnz|"
+                   r"new zealand|nz|snb|swiss|switzerland|sweden|norway|india|brazil|mexico|turkey|south africa)\b", re.I)
+
+def importa(titulo):
+    titulo = re.sub(r"\bU\.?S\.? ?dollar\b", "dollar", titulo, flags=re.I)   # "contra el dólar" no es noticia de EEUU
+    if EEUU.search(titulo) or SI.search(titulo):
+        # Titulares que empiezan por otro país solo cuentan si hablan claramente de EEUU
+        if OTROS.search(titulo) and not EEUU.search(titulo) and not re.search(r"\b(fed|trump|tariffs?|nasdaq|wall street|united states)\b", titulo, re.I):
+            return False
+        return True
+    return False
 
 def descargar():
     req = urllib.request.Request(URL, headers={"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"})
@@ -52,7 +74,7 @@ def main():
     ya = {x.get("ff_id") for x in datos if x.get("ff_id")}
     nuevas = 0
     for sid, h in historias(pagina).items():
-        if sid in ya or not h["title"]:
+        if sid in ya or not h["title"] or not importa(h["title"]):
             continue
         cuando = dt.datetime.fromtimestamp(h["t"], dt.timezone.utc)
         local = cuando.astimezone(MADRID) if MADRID else cuando
