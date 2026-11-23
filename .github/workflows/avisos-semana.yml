@@ -1,0 +1,29 @@
+name: Avisos de la semana (domingo y lunes)
+
+on:
+  schedule:
+    - cron: "3 17 * * 0"    # domingo ~18:00 (hora de España en invierno)
+    - cron: "3 6 * * 1"     # lunes ~07:00 (hora de España en invierno)
+  workflow_dispatch:
+    inputs:
+      cual:
+        description: "domingo o lunes"
+        default: "domingo"
+
+permissions:
+  contents: read
+
+jobs:
+  avisar:
+    runs-on: ubuntu-latest
+    env:
+      FIREBASE_SA: ${{ secrets.FIREBASE_SA }}
+    steps:
+      - uses: actions/checkout@v5
+      - name: Enviar resumen
+        if: env.FIREBASE_SA != ''
+        run: |
+          pip install -q pywebpush google-auth requests
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then CUAL="${{ inputs.cual }}";
+          elif [ "$(date -u +%u)" = "7" ]; then CUAL=domingo; else CUAL=lunes; fi
+          python3 scripts/avisos.py "$CUAL"

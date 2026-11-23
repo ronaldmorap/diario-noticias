@@ -2,7 +2,7 @@ name: Noticias de última hora (Forex Factory, carpeta roja)
 
 on:
   push:
-    paths: ["scripts/ultimahora.py", ".github/workflows/ultima-hora.yml"]
+    paths: ["scripts/ultimahora.py", "scripts/avisos.py", ".github/workflows/ultima-hora.yml"]
   schedule:
     - cron: "*/15 * * * *"   # cada 15 minutos (GitHub a veces se retrasa algo)
   workflow_dispatch: {}
@@ -17,6 +17,8 @@ concurrency:
 jobs:
   leer:
     runs-on: ubuntu-latest
+    env:
+      FIREBASE_SA: ${{ secrets.FIREBASE_SA }}
     steps:
       - uses: actions/checkout@v5
       - name: Hot stories de impacto alto
@@ -31,3 +33,9 @@ jobs:
           git checkout -- . 2>/dev/null || true
           for i in 1 2 3; do git pull -q --rebase origin main && git push && exit 0; sleep 5; done
           exit 1
+      - name: Notificaciones al móvil
+        if: env.FIREBASE_SA != ''
+        run: |
+          pip install -q pywebpush google-auth requests
+          python3 scripts/avisos.py ultima
+          python3 scripts/avisos.py bienvenida

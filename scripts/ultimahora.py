@@ -101,6 +101,7 @@ def main():
         datos = []
     ya = {x.get("ff_id") for x in datos if x.get("ff_id")}
     nuevas = 0
+    lista_nuevas = []
     for sid, h in historias(pagina).items():
         if sid in ya or not h["title"] or not importa(h["title"]):
             continue
@@ -108,6 +109,7 @@ def main():
         local = cuando.astimezone(MADRID) if MADRID else cuando
         datos.append({"date": local.date().isoformat(), "ts": cuando.strftime("%Y-%m-%dT%H:%M:%SZ"),
                       "title": h["title"], "url": h["url"], "ff_id": sid, "src": "ff"})
+        lista_nuevas.append(datos[-1])
         nuevas += 1
     traducidas = 0
     for x in datos:
@@ -115,6 +117,7 @@ def main():
             es = traducir(x["title"])
             if es: x["title_es"] = es; traducidas += 1
     print(traducidas, "traducidas")
+    json.dump(lista_nuevas, open("nuevas.json", "w", encoding="utf-8"), ensure_ascii=False)   # para avisos.py (no se guarda en el repo)
     datos.sort(key=lambda x: x.get("ts") or x.get("date"))
     json.dump(datos, open("ultima-hora.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(nuevas, "nuevas ·", len(datos), "en total")
