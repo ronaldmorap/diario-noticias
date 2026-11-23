@@ -1,7 +1,7 @@
 """Noticias de última hora: lee las Hot Stories / Latest Stories de Forex Factory y guarda solo las de
 impacto ALTO (la carpeta roja) que afectan al Nasdaq en ultima-hora.json. Las que se añadieron a mano (sin "src") no se tocan.
 Las guardadas no se borran nunca: sirven para el backtest."""
-import json, re, html, sys, datetime as dt, urllib.request
+import json, re, html, sys, datetime as dt, urllib.request, urllib.parse
 
 URL = "https://www.forexfactory.com/news"
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36"
@@ -33,6 +33,27 @@ def importa(titulo):
             return False
         return True
     return False
+
+def traducir(texto):
+    """Titular al español. Prueba el traductor de Google y, si falla, MyMemory. Si nada funciona, None (se reintenta en la siguiente pasada)."""
+    q = urllib.parse.quote(texto)
+    try:
+        req = urllib.request.Request(f"https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=es&dt=t&q={q}", headers={"User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            d = json.loads(r.read().decode("utf-8"))
+        es = "".join(p[0] for p in d[0] if p and p[0]).strip()
+        if es: return es
+    except Exception as e:
+        print("Google no tradujo:", e)
+    try:
+        req = urllib.request.Request(f"https://api.mymemory.translated.net/get?q={q}&langpair=en|es", headers={"User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            d = json.loads(r.read().decode("utf-8"))
+        es = html.unescape((d.get("responseData") or {}).get("translatedText") or "").strip()
+        if es and d.get("responseStatus") == 200: return es
+    except Exception as e:
+        print("MyMemory no tradujo:", e)
+    return None
 
 def descargar():
     req = urllib.request.Request(URL, headers={"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"})
@@ -81,6 +102,12 @@ def main():
         datos.append({"date": local.date().isoformat(), "ts": cuando.strftime("%Y-%m-%dT%H:%M:%SZ"),
                       "title": h["title"], "url": h["url"], "ff_id": sid, "src": "ff"})
         nuevas += 1
+    traducidas = 0
+    for x in datos:
+        if x.get("src") == "ff" and not x.get("title_es"):
+            es = traducir(x["title"])
+            if es: x["title_es"] = es; traducidas += 1
+    print(traducidas, "traducidas")
     datos.sort(key=lambda x: x.get("ts") or x.get("date"))
     json.dump(datos, open("ultima-hora.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(nuevas, "nuevas ·", len(datos), "en total")
