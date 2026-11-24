@@ -4,7 +4,7 @@ on:
   push:
     paths: ["scripts/ultimahora.py", "scripts/avisos.py", ".github/workflows/ultima-hora.yml"]
   schedule:
-    - cron: "*/15 * * * *"   # cada 15 minutos (GitHub a veces se retrasa algo)
+    - cron: "7,22,37,52 * * * *"   # respaldo: el despertador de Cloudflare es quien lo lanza de verdad cada 15 min
   workflow_dispatch: {}
 
 permissions:
