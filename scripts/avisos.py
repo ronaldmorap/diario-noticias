@@ -206,6 +206,17 @@ def semana(lunes):
     return ev, len(ff)
 
 
+def cambio_hora(lunes):
+    """Días (lun-vie) en que la apertura de NY (9:30 NY) no cae a las 15:30 de España por el cambio de hora."""
+    out = []
+    for i in range(5):
+        d = lunes + dt.timedelta(days=i)
+        ny = dt.datetime(d.year, d.month, d.day, 9, 30, tzinfo=ET).astimezone(TZ)
+        if ny.strftime("%H:%M") != "15:30":
+            out.append((d, ny.strftime("%H:%M")))
+    return out
+
+
 def lineas(ev, hoy=None):
     out = []
     for d, h, t in ev:
@@ -226,6 +237,10 @@ def resumen(fs, cfg, cual):
     else:
         titulo = f"☀️ Buenos días · Esta semana: {n} noticia{'s' if n != 1 else ''} importante{'s' if n != 1 else ''}" if n else "☀️ Buenos días · Semana sin noticias rojas"
     cuerpo = "\n".join(lineas(ev, hoy if cual == "lunes" else None)) if ev else "No hay datos rojos de EEUU ni resultados grandes. Aun así, revisa la app."
+    ch = cambio_hora(lunes)
+    if ch:
+        dias = DIAS[ch[0][0].weekday()] + (f"–{DIAS[ch[-1][0].weekday()]}" if len(ch) > 1 else "")
+        cuerpo = f"⏰ Cambio de hora: apertura de NY a las {ch[0][1]} ({dias})\n" + cuerpo
     enviar(fs, cfg, titulo, cuerpo, tag=f"semana-{lunes.isoformat()}-{cual}")
 
 
