@@ -128,6 +128,12 @@ def ultima(fs, cfg):
         nuevas = json.load(open("nuevas.json", encoding="utf-8"))
     except Exception:
         return
+    if nuevas:
+        # Aviso a las apps abiertas (PC, móvil…): escuchan este documento y recargan las noticias al momento
+        try:
+            fs.set("push/latest", {"at": dt.datetime.now(dt.timezone.utc).isoformat(), "count": len(nuevas)})
+        except Exception as e:
+            print("No se pudo avisar a las apps abiertas:", type(e).__name__)
     ahora = dt.datetime.now(dt.timezone.utc)
     for x in nuevas:
         try:
