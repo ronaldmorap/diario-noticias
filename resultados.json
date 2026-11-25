@@ -10,5 +10,11 @@
   "name": "Broadcom",
   "date": "2026-12-09",
   "time": "amc"
+ },
+ {
+  "sym": "NFLX",
+  "name": "Netflix",
+  "date": "2027-01-19",
+  "time": ""
  }
 ]
