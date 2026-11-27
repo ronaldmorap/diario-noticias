@@ -1922,5 +1922,19 @@
 {
 "date": "2026-11-25",
 "kind": "none"
+},
+{
+"date": "2026-11-26",
+"time": "08:30",
+"title": "PCE – inflación preferida por la Fed",
+"kind": "macro",
+"src": "Core PCE Price Index"
+},
+{
+"date": "2026-11-26",
+"time": "08:30",
+"title": "PIB (GDP)",
+"kind": "macro",
+"src": "GDP"
 }
 ]
