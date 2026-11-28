@@ -1936,5 +1936,9 @@
 "title": "PIB (GDP)",
 "kind": "macro",
 "src": "GDP"
+},
+{
+"date": "2026-11-27",
+"kind": "none"
 }
 ]
